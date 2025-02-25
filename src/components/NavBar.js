@@ -85,13 +85,13 @@ const NavBar = () => {
             </nav>
 
             <nav className='flex items-center justify-center flex-wrap mt-2'>
-              <motion.a aria-label="Go to Github" href="/" target={"_blank"}
+              <motion.a aria-label="Go to Github" href="https://github.com/yashvanjani16" target={"_blank"}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-6 bg-light rounded-full mr-[30px]"
               ><GithubIcon />
               </motion.a>
-              <motion.a aria-label="Go to Linkedin" href="/" target={"_blank"}
+              <motion.a aria-label="Go to Linkedin" href="http://linkedin.com/in/yash-vanjani-1127a2236" target={"_blank"}
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-6"><LinkedInIcon />

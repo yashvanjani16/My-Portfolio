@@ -34,7 +34,7 @@ export default function Home() {
               <p className='my-4 text-base font-medium md:text-sm sm:text-xs'>As a skilled front-end developer, I am passionate about turning pixel-perfect designs into flawless, clean and bug-free code that enhances user engagement.
               </p>
               <div className='flex items-center self-start mt-2 lg:self-center'>
-                <Link title="Download Resume" href="/dummy.pdf" target={"_blank"} className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark md:p-2 md:px-4 md:text-base'
+                <Link title="Download Resume" href="/yashcv.pdf" target={"_blank"} className='flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark md:p-2 md:px-4 md:text-base'
                   download={true}
                 >Resume <LinkArrow className="w-6 ml-1" />
                 </Link>
