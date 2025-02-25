@@ -1,3 +1,36 @@
-Prompt to generate developer image using midjourney:
+Documentation of ReactJS
 
-- A developer wearing glasses, digital art, profile picture, white background
+Prompt to generate developer image using midjourney: A developer wearing glasses, digital art, profile picture, white background
+Use Canva to create images like circular text etc and to convert a PNG image to SVG : Convertio, Vectorizer.io, Picsvg
+To convert SVG into react componenets : https://react-svgr.com/
+If want,on clicking nav items to scroll smoothly to the respective section just match href of that items and id of respective section and add class scroll smooth
+If want to add event listener like scroll : 
+const[isScroll,setIsScroll] = useState(false) 
+
+useEffect(()=>{
+    window.addEventListener('scroll',()=>{
+        if(scrollY > 50){
+            setIsScroll(true)
+        }else{
+            setIsScroll(false)
+        }
+    })
+},[])
+
+<div className={`${isScroll ? "" : ""}`}></div>
+
+Events: onCopy,onMouseMove
+
+//Adding aria-label attribute
+Example 1: Using legacyBehavior (Next.js 12 and earlier)
+
+<Link href="/about" legacyBehavior>
+  <a aria-label="Go to About page">About</a>
+</Link>
+
+Example 2: Directly on Link (Next.js 13+)
+In Next.js 13+, <Link> automatically renders an <a> tag, so you don't need to wrap it
+
+<Link href="/about" aria-label="Go to About page">
+  About
+</Link>
