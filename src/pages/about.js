@@ -109,7 +109,7 @@ const about = () => {
                                 initial={{ y: 50 }}
                                 whileInView={{ y: 0 }}
                                 transition={{ duration: 1, type: "spring" }}
-                                className='font-medium'>Hi, I'm Yash Vanjani, a front-end developer passionate about crafting visually stunning, highly functional, and user-friendly digital experiences. With expertise in modern web technologies like HTML, CSS, JavaScript, React, and Tailwind CSS, I specialize in building responsive and accessible interfaces that enhance user engagement.</motion.p>
+                                className='font-medium'>Hi, I&apos;m Yash Vanjani, a front-end developer passionate about crafting visually stunning, highly functional, and user-friendly digital experiences. With expertise in modern web technologies like HTML, CSS, JavaScript, React, and Tailwind CSS, I specialize in building responsive and accessible interfaces that enhance user engagement.</motion.p>
                             <motion.p
                                 initial={{ y: 50 }}
                                 whileInView={{ y: 0 }}

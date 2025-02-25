@@ -70,7 +70,7 @@ const projects = () => {
           <AnimatedText text="Curiosity sparks genius!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
           <div className='grid grid-cols-12 gap-24 gap-y-32 xl:gap-x-16 lg:gap-x-8 md:gap-y-24 sm:gap-x-0'>
             <div className='col-span-12'>
-            <FeaturedProject title="Project 1" img={project1} summary="My company's project based on the Sitecore CMS, utilizing C# Razor code along with various front-end technologies. The implementation follows best practices to ensure scalability, performance, and maintainability." link="https://www.angloamerican.com/"/>
+            <FeaturedProject title="Project 1" img={project1} summary="My company&apos;s project based on the Sitecore CMS, utilizing C# Razor code along with various front-end technologies. The implementation follows best practices to ensure scalability, performance, and maintainability." link="https://www.angloamerican.com/"/>
             </div>
             <div className='col-span-6 md:col-span-12'>
             <Project title="Project 2" img={project2} link="https://www.hgcapitaltrust.com/"/>

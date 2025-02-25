@@ -4,7 +4,7 @@ import TransitionEffect from '@/components/TransitionEffect'
 import Head from 'next/head'
 import React, { useState } from 'react'
 
-const contact = () => {
+const Contact = () => {
 
     const [result, setResult] = useState("");
 
@@ -43,7 +43,7 @@ const contact = () => {
                 <AnimatedText text="Collaborate to create success!" className='mb-16 lg:!text-7xl sm:mb-8 sm:!text-6xl xs:!text-4xl'/>
                 <div className='mt-32 md:mt-16 w-full rounded-2xl border border-solid border-dark bg-light p-6 xs:p-4'>
                     <p className='text-center text-5xl font-semi-bold'>Get in touch</p>
-                    <p className='text-center max-w-2xl mx-auto mt-5 mb-12 text-primary'>I'd love to hear from you! If you have any questions,comments, or feedback,please use the form below.</p>
+                    <p className='text-center max-w-2xl mx-auto mt-5 mb-12 text-primary'>I&apos;d love to hear from you! If you have any questions,comments, or feedback,please use the form below.</p>
 
                     <form onSubmit={onSubmit} className='max-w-2xl mx-auto'>
                         <div className='grid grid-cols-auto gap-6 mt-10 mb-8'>
@@ -62,4 +62,4 @@ const contact = () => {
     )
 }
 
-export default contact
+export default Contact
