@@ -41,11 +41,11 @@ const {scrollYProgress} = useScroll(
                 <motion.div style={{scaleY:scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top md:w-[2px] md:left-[30px] xs:left-[20px]'/>
                 
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
-                    <Details position="Software Engineer" company="IDX" companyLink="https://www.idx.inc/" time="Jan2024-present" address="Alembic Road, Gorwa" work="worked on a team responsible for developing websites in sitecore CMS." />
+                    <Details position="Software Engineer" company="IDX" companyLink="https://www.idx.inc/" time="Jan2024-present" address="Alembic Road, Gorwa" work="worked in a team responsible for developing websites in sitecore CMS." />
 
-                    <Details position="Associate Software Engineer" company="IDX" companyLink="https://www.idx.inc/" time="July2023-Dec2023" address="Alembic Road, Gorwa" work="worked on a team responsible for developing websites in sitecore CMS." />
+                    <Details position="Associate Software Engineer" company="IDX" companyLink="https://www.idx.inc/" time="July2023-Dec2023" address="Alembic Road, Gorwa" work="worked in a team responsible for developing websites in sitecore CMS." />
                     
-                    <Details position="Intern" company="IDX" companyLink="https://www.idx.inc/" time="Feb2023-June2023" address="Alembic Road, Gorwa" work="worked on a team responsible for developing a website to understand the core of Web technologies." />
+                    <Details position="Intern" company="IDX" companyLink="https://www.idx.inc/" time="Feb2023-June2023" address="Alembic Road, Gorwa" work="worked in a team responsible for developing UI websites to understand the core of Web technologies." />
 
                 </ul>
             </div>

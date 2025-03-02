@@ -16,9 +16,6 @@ const Details = ({ type, time, place, info }) => {
             <span className='capitalize font-mediu text-dark/75 xs:text-sm'>
                 {time} | {place}
             </span>
-            <p className='font-medium w-full md:text-sm'>
-                {info}
-            </p>
         </motion.div>
     </li>
 
@@ -40,9 +37,9 @@ const {scrollYProgress} = useScroll(
             <div className='w-[75%] mx-auto relative lg:w-[90%] md:w-full' ref={ref}>
                 <motion.div style={{scaleY:scrollYProgress}} className='absolute left-9 top-0 w-[4px] h-full bg-dark origin-top md:w-[2px] md:left-[30px] xs:left-[20px]'/>
                 <ul className='w-full flex flex-col items-start justify-between ml-4 xs:ml-2'>
-                    <Details type="Bachelor of Technology in Computer Science & Engineering" time="2021-2023" place="Alembic Road, Gorwa" info="worked on a team responsible for developing websites in sitecore CMS." />
+                    <Details type="Bachelor of Technology in Computer Science & Engineering" time="2021-2023" place="Parul University" />
 
-                    <Details type="Diploma in Computer Science & Engineering" time="2017-2020" place="Alembic Road, Gorwa" info="worked on a team responsible for developing websites in sitecore CMS." />
+                    <Details type="Diploma in Computer Science & Engineering" time="2017-2020" place="Parul University" />
                     
 
                 </ul>
