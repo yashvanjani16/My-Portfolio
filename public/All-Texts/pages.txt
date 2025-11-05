@@ -1,3 +1,188 @@
+Sitecore//
+Sitecore
+1:   @using Sitecore.Data.Items;
+     var pageTitel = @Sitecore.Context.Item["Title"];     // To get title of page on which rendering is added
+
+2:   @if(!string.IsNullOrEmpty(Model.SourceItem["Title"])){}
+     @if(!string.IsNullOrWhiteSpace(@textTitle)){}
+
+3:   @Html.MIS().Rendering("{D4C3ABEE-27BA-4189-815E-5A9774AAC596}", new {
+			DataSource = Model.SourceItem.Paths.FullPath
+		})
+
+4:  @{var bgimage = Html.MIS().Url("image-bg",Model.SourceItem);}
+<section class="sec2 bg" style="background-image: url('@bgimage'),url('@bgimage')" >
+
+5:   @Html.MIS().Rendering("{6A984D2A-4354-43D7-8FCB-4D9A8FC51485}",new{
+      SettingPath="{39748E86-1FD5-4D31-A73D-0790BAFAEAFB}",
+      SortBy="Date",
+      SortOrder="desc"
+      })
+
+6:   var categoryItems = ((Sitecore.Data.Fields.MultilistField)item.SourceItem.Fields["Select Category"]).GetItems().Where(thisItem => thisItem != null).ToList();
+     var authorItems = ((Sitecore.Data.Fields.MultilistField)item.SourceItem.Fields["Select Author"]).GetItems().Where(thisItem => thisItem != null).ToList();
+
+7:   @Html.MIS().Field("date",item.SourceItem,new{format="MMM dd,yyyy"})
+
+8:   <a @Html.MIS().GeneralLink("link",Model.SourceItem,"{B4119FE4-4D12-4CDD-B272-7EC588951772}") class="cta cta-primary-outline">@Html.MIS().Field("link-text")</a>
+
+9:  if(@item.Template.ID.ToString() == "{19144F73-D8CD-477E-85BC-26EBD0CB3F23}"){}
+
+10: var leftImageCheck = @Model.SourceItem["RightImage"].ToString();    (RightImage is fieldname of checkbox)
+var rightLeftContentClass = @leftImageCheck == "1" ? "d-flex flex-md-row-reverse flex-column-reverse" : "";  
+
+11. var counter = Model.SourceItem.GetChildren().IndexOf(item) + 1;
+          var activeClass = counter == 1 ? "active" : "";
+
+12. Condition to check if "Hide from list" checkbox is checked or not
+    @foreach(var item in Model.SourceItem.GetChildren().ToList().Where(x => x["Hide From List"] != "1")){
+
+    Condition to check template name within foreach
+    @foreach (var item in Model.SourceItem.GetChildren().ToList().Where(x => x.Template.Name == "Report Builder Navigation")){
+	
+    Condition to apply parameters within foreach
+    @foreach(var item in Model.SourceItem.GetChildren().ToList().OrderByDescending(x=> x["Date"])){
+
+13. #Sitepath#homepage|#FILEPATH#
+
+14. always set date field with date with timezone (template)
+
+15. For rss feed:
+   1. check items which are alertable then create rss (to check which items are alertable refer email alerts from t&f or ask bpm)
+   2. check checkbox when items are not accessible(to link it to parent template ) [not accessible in the sense items does not redirect to somewhere]	
+
+16. @Html.Raw(@Html.Sitecore().Field("Title",Model.SourceItem).ToString().Trim().ToLower().Replace(" ","-"))
+    This will change:
+    Abc Xyz to abc-xyz
+    So, such string manipulation can be done directly in site rendering
+
+17. string footerLogoUrl = @Html.MIS().Url("Footer Logo", @chunkField).ToString();
+    string arImage = @Html.MIS().Url("Image", @chunkField).ToString();
+    <img src="@arImage" alt="Annual Report Image" />                                        (dynamic alt tag of img syntax reference - playtech and hg)
+
+18. yt video id = D0UnqGm_miA
+    vimeo video id = 89489427 , 813537316
+
+
+19.This happen when you use third party APIs, in which $ is used so you have to change all occurances of $ with $j,
+
+Find	Replace
+$	$j
+$(	$j(
+$.	$j.
+$[	$j[
+
+20. new {CharLimit="160"}  WordLimit="12"  new {DisableWebEdit = true}:-
+    @Html.MIS().TextField("Title" ,Model.SourceItem, new{WordLimit="12"})
+    @Html.MIS().TextField("Intro Text" ,Model.SourceItem, new{CharLimit="200" , ContinueNotation="..."})
+
+21. For getting item count in list control
+@Model.InnerListItems.Count
+ 
+For getting item count in general control
+@Model.SourceItem.GetChildren().Count
+
+22. Sitecore.Data.Items.Item parentItem = Sitecore.Context.Database.GetItem("{395F5889-03DD-40A5-A6F4-C1CA280F8F50}");
+ 
+    var totalCount= @parentItem.GetChildren().Count()
+
+23. Total count / length
+ 
+    @innerItem.Children.Count
+    @innerItem.InnerListItems.Count
+    @Model.TotalCount
+    @Model.SourceItem.Children.ToArray().Length
+
+    If in general component:
+    @Model.SourceItem.Children.ToArray().Length
+
+    Length check in multilist : 
+var counter = 1;
+typeDetails = ((Sitecore.Data.Fields.MultilistField)item.Fields["Type"]).GetItems().Where(thisItem => thisItem != null).ToList();
+
+<type><![CDATA[@foreach (var typeitem in typeDetails){        
+          if(@typeDetails.Count == counter){
+          var t = typeitem.Name;
+          @t;
+          }
+          else{
+          var t = typeitem.Name + ",";
+          @t;
+          }
+          counter++;
+        }]]></type>
+
+24.// Check if the language version exists for the page
+Sitecore.Globalization.Language language = Sitecore.Globalization.Language.Parse(Sitecore.Context.Language.ToString());
+Item pageItem = Sitecore.Context.Database.GetItem(PageId, language);
+ 
+if (pageItem.Versions.Count > 0)
+{
+    // Execute corresponding code
+}
+
+25. var bannerImgUrl = !string.IsNullOrWhiteSpace(@bannerImg) ? Html.MIS().Url(new UrlParameters{Name="Banner Image"}).ToString() : "";     -    Working proper in banner control but throwing error in general control
+IDX logo :https://images.investisdigital.com/branding/tools/investis-digital.svg
+
+26.Below is the confluence link for reference for MVC webform
+   https://investis.atlassian.net/wiki/spaces/ITDev/pages/4084137988/MVC+Webform
+
+27. https://investis.atlassian.net/wiki/spaces/IBD/pages/4081188884/Sitecore+MVC+Project+Workflow
+28. https://investis.atlassian.net/wiki/spaces/MD/pages/4490199041/Maintenance+Document+-+Build+-+Service+Handover+Checklist+-+TEMPLATE+2024  - MD
+
+To do list for best practices:
+1: Add values in standard values (parent and child whichever have fields) - TEMPLATE SECTION
+2: Associate rendering link in standard values of parent template and give id of of template in site rendering (parent template ,not standard values id)
+3: Producers,
+Never use image provided by designer directly.
+Open them in photoshop and optimise it first then upload and use. Also image without transparency should be used only jpeg as png is heavy in size.
+4: Wherever A tag is used always make it not selfservable using : new {DisableWebEdit = true}.
+
+New workflow with the new base site:
+
+* Search result page template creation will be required now.
+* Delete field using right clicking physical field item.
+* Module having child items : branch should be created.
+* Now direct renderings under site-name-modules and no folders for rendering categorization.
+* Now third party js and css should be added in head section along with other required things such as security related script, gtm script etc...
+
+Self-serve checkpoints and standard workflow.
+
+* Create templates
+* Create rendering
+* Create respective branches (If child items are there)
+* Set proper configure assign values (with branches if any).
+* Add rendering id in respective template's "Associate rendering" field.
+* "Data source template" Field in rendering (Content) (Add respective template id here).
+* Create rendering for self-serve and assign it to the child item.
+* Set proper std values in templates along with proper placeholder images with desired dimensions.
+* Use disable web edit = true at all required places.
+* Hide unwanted fields from self-serve using "Hide fields from self-serve settings".
+* Add your renderings in placeholder settings.
+* Async rendering and partial rendering should be "Editable: false" (Unchecked).
+* Keep rendering icon and its template icon same.
+* Create "Hide from list" checkbox for template used for list control rendering and check if it is working or not.
+* Create "Hide from list" checkbox for template used for controls other than list control rendering and write coding to hide it and check if it is working or not.
+* Don't create sliders in self-serve mode.
+
+JIRA workflow enhancement.
+Below is the checklist as of now we can add/remove items later.
+•	Responsive behavior completed across the devices
+•	Pixel perfect completed and screenshot attached
+•	Lazy load added to applicable images
+•	Responsive images used to applicable images
+•	Functional specification points covered as per Figma
+•	X-Browser, No Js is implemented
+•	Accessibility covered as per level given in E&P
+•	Self-serve check completed as per checklist.
+•	QA Ignore points added
+•	Jira is ready with the information required for QA
+
+
+
+
+
+
 HOME PAGE: 
 
 - Turning Vision Into Reality With Code And Design. 
